@@ -36,7 +36,7 @@ export default class Resume extends Component {
         return (
             <div className='row margin20'>
                 <div className='col-md-12'>
-                    <h3 className='section-title skills"'>About</h3>
+                    <h3 className='section-title skills"'>Skills</h3>
                     {skills.map(skill => (
                         <div className={cssClass} key={skill.title}>
                             <h4>{skill.title}</h4>
