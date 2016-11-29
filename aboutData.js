@@ -7,7 +7,7 @@ module.exports = {
         "twitter": "https://twitter.com/bcruddy",
         "github": "https://github.com/bcruddy",
         "linkedin": "https://linkedin.com/in/bcruddy",
-        "github project": "https://github.com/bcruddy/react-resume.git"
+        "stackoverflow": "https://stackoverflow.com/users/2624101/brian"
     },
     "resume": {
         "about": [
