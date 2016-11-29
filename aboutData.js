@@ -24,10 +24,38 @@ module.exports = {
             }
         ],
         "technical": [
-            ["array", "of"],
-            ["arrays", "so"],
-            ["you", "can"],
-            ["sort", "skills"]
+            [
+                "Node.js",
+                "Express.js",
+                "C#/.NET",
+                "WebAPI",
+                ".NET MVC",
+                "Entity Framework"
+            ],
+            [
+                "MySQL",
+                "MS SQL",
+                "Mongo DB",
+                "Redis",
+                "Apache",
+                "Nginx"
+            ],
+            [
+                "ES5 / ES6+",
+                "React",
+                "Typescript",
+                "Webpack / Gulp",
+                "Twitter-Bootstrap",
+                "SCSS"
+            ],
+            [
+                "Ubuntu",
+                "RHEL",
+                "Amazon Web Services",
+                "Object Oriented Programming",
+                "Git",
+                "Let's Encrypt"
+            ]
         ],
         "employment": [
             {
@@ -66,9 +94,7 @@ module.exports = {
                 "url": "https://goatattack.com",
                 "dates": "April 2015 - Current",
                 "description": [
-                    "Fill this stuff out soon.",
-                    "Because this looks really dumb.",
-                    "Its not even long enough to be filler text."
+                    "Goat Attack is a web-based prank application for spamming your friends' phones with a random selection of goat pictures and goat related puns. It's just as silly as it sounds. Goat Attack is a collection of .NET projects relying on Twilio's API to send MMS messages and Braintree's API to process payments. This project is running behind IIS on Windows Server on Google Cloud Platform."
                 ]
             },
             {
@@ -76,9 +102,7 @@ module.exports = {
                 "url": "https://gramlikecam.com",
                 "dates": "August 2016 - Current",
                 "description": [
-                    "Fill this stuff out soon.",
-                    "Because this looks really dumb.",
-                    "Its not even long enough to be filler text."
+                    "Gram Like Cam is a web-based nodejs/Express application for translating English into whatever hieroglyphics Cam Newton uses in his Instagram captions. This was initially inspired to translate Cam's captions from the symbols he uses into plain English, but this way was more fun. This project is open source and running behind an Apache reverse proxy on an Ubuntu Linux server on AWS secured with Let's Encrypt."
                 ]
             }
         ]

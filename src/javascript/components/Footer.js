@@ -7,10 +7,10 @@ export default class Footer extends Component {
         return Object.keys(data).length ? (
             <ul className="list-inline">
                 {Object.keys(data)
-                    .filter(itemKey => itemKey !== 'email')
+                    .filter(itemKey => !!data[itemKey])
                     .map((itemKey, index) =>
                     <li key={'idx' + index}>
-                        <a href={this.props.data[itemKey]}>{itemKey}</a>
+                        <a href={data[itemKey]}>{itemKey}</a>
                     </li>)}
             </ul>
         ) : null;
