@@ -8,8 +8,6 @@ import {should} from 'chai';
 import Resume from '../../src/javascript/components/Resume';
 import aboutData from '../../aboutData';
 
-const ResumeFactory = React.createFactory(Resume);
-
 describe('The resume component', function () {
     const shallowRenderer = TestUtils.createRenderer();
 

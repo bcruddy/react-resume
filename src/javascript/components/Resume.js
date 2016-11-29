@@ -52,7 +52,7 @@ export default class Resume extends Component {
 
     renderTechnical () {
         let {technical} = this.props.data,
-            cssClass = 'text-center ';
+            cssClass = 'col-xs-6 ';
 
         if (!technical || !technical.length) {
             return null;
@@ -159,7 +159,6 @@ export default class Resume extends Component {
     }
 
     render () {
-
         return (
             <section className='container-fluid"'>
                 <div className='container'>

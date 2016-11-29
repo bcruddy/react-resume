@@ -7,10 +7,11 @@ module.exports = {
         "twitter": "https://twitter.com/bcruddy",
         "github": "https://github.com/bcruddy",
         "linkedin": "https://linkedin.com/in/bcruddy",
+        "github project": "https://github.com/bcruddy/react-resume.git"
     },
     "resume": {
         "about": [
-            "I like to build things and learn new technologies. I've been creating software for 4 years - from simple websites to SaaS development consuming cloud based services like Amazon Web Services and Google Cloud.",
+            "I like to build things and learn new technologies. I've been creating software since 2010 - from simple websites to SaaS development consuming cloud based services like Amazon Web Services and Google Cloud.",
             "These days most of my time is spent building user interfaces with React."
         ],
         "skills": [
@@ -64,7 +65,7 @@ module.exports = {
                 "endDate": "Current",
                 "title": "Software Developer",
                 "description": [
-                    "super cool filler text"
+                    "Building cool stuff in the digital marketplace with React and Node.js."
                 ]
             },
             {
@@ -73,9 +74,10 @@ module.exports = {
                 "endDate": "October 2016",
                 "title": "Full Stack Developer",
                 "description": [
-                    "Fill this stuff out soon.",
-                    "Because this looks really dumb.",
-                    "Its not even long enough to be filler text."
+                    "* Designed, built, and deployed the API-driven web app to compliment existing iOS and android apps.",
+                    "* Built analytics dashboards from the database to the UI to deliver both in house analytics and provide customers access to their data.",
+                    "* Worked closely with design to rebuild the marketing website from the ground up.",
+                    "* Leveraged AWS Lambda to offload image processing from our servers for maximum scalability and reliability."
                 ]
             },
             {
@@ -84,7 +86,7 @@ module.exports = {
                 "endDate": "Current",
                 "title": "Founder, Full Stack Developer",
                 "description": [
-                    "What started as building a simple HTML/CSS website for a friend's band while taking an intro to CS class in college has since grown into a recurring project stream. Associated projects are all run on AWS and are built with either C#/.NET MVC or nodejs/Express. Node projects run on Ubuntu Linux behind Apache and C#/.NET MVC projects run on Windows Server behind IIS."
+                    "What started as building a simple HTML/CSS website for a friend's band while taking an intro to CS class in college has since grown into a recurring project stream. Associated projects are all run on AWS and are built with either C#/.NET MVC or Node.js/Express.js. Node projects run on Ubuntu Linux behind Apache and C#/.NET MVC projects run on Windows Server behind IIS."
                 ]
             }
         ],
