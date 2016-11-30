@@ -1,5 +1,5 @@
 {
-  "name": "react-resume",
+  "name": "static-cv",
   "version": "0.0.1",
   "description": "static resume html generated from a json file",
   "main": "dist/app.js",
