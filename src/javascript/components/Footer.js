@@ -10,7 +10,7 @@ export default class Footer extends Component {
 
         let linkItems = links.map((link, index) => (
             <li key={'idx' + index}>
-                <a href={link.url} target='_blank'>
+                <a href={link.url} target='_blank' className='footer-link'>
                     {link.faClassName ?
                     (<i className={`fa fa-2x ${link.faClassName}`}></i>) :
                     link.title}
