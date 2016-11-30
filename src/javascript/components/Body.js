@@ -13,7 +13,7 @@ export default class Body extends Component {
                     title={aboutData.fullName}
                     lead={`${aboutData.title} - ${aboutData.location}`} />
                 <Resume data={aboutData.resume} />
-                <Footer data={aboutData.contact} />
+                <Footer links={aboutData.footerLinks} />
             </body>
         );
     }

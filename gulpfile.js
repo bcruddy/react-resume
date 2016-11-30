@@ -3,11 +3,9 @@ const gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps')
     _ = require('lodash');
 
-gulp.task('transform', () =>
+gulp.task('build', () =>
     gulp.src(['src/app.js', 'src/**/*.js'])
         .pipe(sourcemaps.init())
-        .pipe(babel({
-            presets: ['react', 'es2015']
-        }))
+        .pipe(babel()) // settings in .babelrc
         .pipe(gulp.dest('dist'))
     );

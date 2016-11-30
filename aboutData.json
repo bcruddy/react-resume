@@ -1,14 +1,33 @@
-module.exports = {
+{
     "fullName": "Brian Ruddy",
     "title": "Software Developer",
     "location": "Raleigh, NC",
     "contact": {
         "email": "",
-        "twitter": "https://twitter.com/bcruddy",
-        "github": "https://github.com/bcruddy",
-        "linkedin": "https://linkedin.com/in/bcruddy",
-        "stackoverflow": "https://stackoverflow.com/users/2624101/brian"
+        "phone": ""
     },
+    "footerLinks": [
+        {
+            "faClassName": "fa-twitter",
+            "title": "",
+            "url": "https://twitter.com/bcruddy"
+        },
+        {
+            "faClassName": "fa-github",
+            "title": "",
+            "url": "https://github.com/bcruddy"
+        },
+        {
+            "faClassName": "fa-linkedin",
+            "title": "",
+            "url": "https://linkedin.com/in/bcruddy"
+        },
+        {
+            "faClassName": "fa-stack-overflow",
+            "title": "",
+            "url": "https://stackoverflow.com/users/2624101/brian"
+        }
+    ],
     "resume": {
         "about": [
             "I like to build things and learn new technologies. I've been creating software since 2010 - from simple websites to SaaS development consuming cloud based services like Amazon Web Services and Google Cloud.",
@@ -109,4 +128,4 @@ module.exports = {
             }
         ]
     }
-};
+}

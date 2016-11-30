@@ -7,13 +7,14 @@
   "scripts": {
     "start": "npm run build && node ./dist/app.js",
     "debug": "node debug ./dist/app.js",
-    "test": "babel-node node_modules/.bin/_mocha -- test/**/*.js",
-    "build": "gulp transform",
+    "test": "npm run build && mocha --compilers js:babel-core/register ./test/**/*_spec.js",
+    "build": "gulp build",
     "generate-static": "npm run build && node ./dist/javascript/lib/generate-static-html.js"
   },
   "author": "@bcruddy",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.18.2",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "chai": "^3.5.0",

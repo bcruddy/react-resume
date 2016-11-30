@@ -1,57 +1,56 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import * as ShallowTestUtils from 'react-shallow-testutils';
 import TestUtils from 'react-addons-test-utils';
-import {should} from 'chai';
+import * as ShallowTestUtils from 'react-shallow-testutils';
+import {expect} from 'chai';
 
 import Resume from '../../src/javascript/components/Resume';
-import aboutData from '../../aboutData';
+import About from '../../src/javascript/components/About';
+import Skills from '../../src/javascript/components/Skills';
+import Technical from '../../src/javascript/components/Technical';
+import Employment from '../../src/javascript/components/Employment';
+import Projects from '../../src/javascript/components/Projects';
+
+import aboutData from '../fixtures/mockAboutData';
 
 describe('The resume component', function () {
     const shallowRenderer = TestUtils.createRenderer();
 
-    it('renders the about section', () => {
+    let resumeComponent;
+
+    before(() => {
         shallowRenderer.render(<Resume data={aboutData.resume} />);
+        resumeComponent = shallowRenderer.getRenderOutput();
+    });
 
-        let result = shallowRenderer.getRenderOutput(),
-            aboutTitle = ShallowTestUtils.findWithClass(result, 'section-name about'),
-            aboutText = ShallowTestUtils.findAllWithClass(result, 'about-text');
+    it('renders the about section', () => {
+        let aboutComponent = ShallowTestUtils.findWithType(resumeComponent, About);
 
-        expect(aboutTitle.props.children).to.equal('About');
-        expect(aboutText.length).to.equal(aboutData.resume.about.length);
+        expect(aboutComponent).to.exist;
     });
 
     it('renders the skills section', () => {
-        shallowRenderer.render(<Resume data={aboutData.resume} />);
+        let skillsComponent = ShallowTestUtils.findWithType(resumeComponent, Skills);
 
-        let result = shallowRenderer.getRenderOutput(),
-            skillsTitle = ShallowTestUtils.findWithClass('section-name skills');
-
-        expect(aboutTitle.props.children).to.equal('Skills');
+        expect(skillsComponent).to.exist;
     });
 
     it('renders the technical section', () => {
-        shallowRenderer.render(<Resume data={aboutData.resume} />);
+        let technicalComponent = ShallowTestUtils.findWithType(resumeComponent, Technical);
 
-        let aboutTitle = ShallowTestUtils.findWithClass('section-name technical');
-
-        expect(aboutTitle.props.children).to.equal('Technical');
+        expect(technicalComponent).to.exist;
     });
 
     it('renders the employment section', () => {
-        shallowRenderer.render(<Resume data={aboutData.resume} />);
+        let employmentComponent = ShallowTestUtils.findWithType(resumeComponent, Employment);
 
-        let aboutTitle = ShallowTestUtils.findWithClass('section-name employment');
-
-        expect(aboutTitle.props.children).to.equal('Employment');
+        expect(employmentComponent).to.exist;
     });
 
     it('renders the projects section', () => {
-        shallowRenderer.render(<Resume data={aboutData.resume} />);
+        let projectsComponent = ShallowTestUtils.findWithType(resumeComponent, Projects);
 
-        let aboutTitle = ShallowTestUtils.findWithClass('section-name projects');
-
-        expect(aboutTitle.props.children).to.equal('Projects')
+        expect(projectsComponent).to.exist;
     });
 });

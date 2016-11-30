@@ -1,27 +1,39 @@
 import React, {Component} from 'react';
 
 export default class Footer extends Component {
-    renderContactMethods (itemKey, index) {
-        let {data} = this.props;
+    renderFooterLinks () {
+        let {links} = this.props;
 
-        return Object.keys(data).length ? (
-            <ul className="list-inline">
-                {Object.keys(data)
-                    .filter(itemKey => !!data[itemKey])
-                    .map((itemKey, index) =>
-                    <li key={'idx' + index}>
-                        <a href={data[itemKey]}>{itemKey}</a>
-                    </li>)}
+        if (!links && !links.length) {
+            return null;
+        }
+
+        let linkItems = links.map((link, index) => (
+            <li key={'idx' + index}>
+                <a href={link.url} target='_blank'>
+                    {link.faClassName ?
+                    (<i className={`fa fa-2x ${link.faClassName}`}></i>) :
+                    link.title}
+                </a>
+            </li>
+        ));
+
+        return (
+            <ul className='list-inline'>
+                {linkItems}
             </ul>
-        ) : null;
+        );
     }
 
     render () {
         return (
-            <footer className="container-fluid">
-                <div className="container">
-                    <div className="col-md-12 text-center">
-                        {this.renderContactMethods()}
+            <footer className='container-fluid'>
+                <div className='container'>
+                    <div className='col-md-12 text-center'>
+                        <p>
+                            <small>{new Date().getFullYear()} &copy;</small>
+                        </p>
+                        {this.renderFooterLinks()}
                     </div>
                 </div>
             </footer>
