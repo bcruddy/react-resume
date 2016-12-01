@@ -4,7 +4,7 @@ export default class Footer extends Component {
     renderFooterLinks () {
         let {links} = this.props;
 
-        if (!links && !links.length) {
+        if (!links || !links.length) {
             return null;
         }
 
@@ -30,7 +30,7 @@ export default class Footer extends Component {
             <footer className='container-fluid'>
                 <div className='container'>
                     <div className='col-md-12 text-center'>
-                        <p>
+                        <p className='copyright'>
                             <small>{new Date().getFullYear()} &copy;</small>
                         </p>
                         {this.renderFooterLinks()}

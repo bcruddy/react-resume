@@ -12,14 +12,14 @@ export default class Employment extends Component {
             <div className='employment-tile col-md-12' key={job.startDate}>
                 <h4 className='company-name'>
                     {job.companyName}
-                    <small style={{marginLeft: 10 + 'px'}} className='text-muted'>
+                    <small style={{marginLeft: 10 + 'px'}} className='text-muted employment-dates'>
                         <em>{job.startDate} - {job.endDate}</em>
                     </small>
                 </h4>
-                <h5>{job.title}</h5>
+                <h5 className='job-title'>{job.title}</h5>
                 {job.description && job.description.length ? (
                     job.description.map((desc, index) => (
-                        <p key={'idx' + index}>{desc}</p>
+                        <p className='job-description' key={'idx' + index}>{desc}</p>
                     ))
                 ) : null}
             </div>

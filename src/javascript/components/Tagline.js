@@ -5,9 +5,9 @@ export default class Tagline extends Component {
         return (
             <header className="jumbotron">
                 <div className="container">
-                    <h1>{this.props.title}</h1>
+                    <h1>{this.props.fullName}</h1>
                     {this.props.lead ? (
-                        <p class="lead">{this.props.lead}</p>
+                        <p className="lead-text">{this.props.lead}</p>
                     ) : null}
                 </div>
             </header>

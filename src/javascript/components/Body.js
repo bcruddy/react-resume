@@ -10,7 +10,7 @@ export default class Body extends Component {
         return (
             <body>
                 <Tagline
-                    title={aboutData.fullName}
+                    fullName={aboutData.fullName}
                     lead={`${aboutData.title} - ${aboutData.location}`} />
                 <Resume data={aboutData.resume} />
                 <Footer links={aboutData.footerLinks} />
