@@ -4,7 +4,9 @@ import Root from '../components/Root.js';
 import fs from 'fs';
 import path from 'path';
 
-let content = `<!DOCTYPE html>${ReactDOMServer.renderToStaticMarkup(<Root />)}`,
+import data from '../../../aboutData';
+
+let content = `<!DOCTYPE html>${ReactDOMServer.renderToStaticMarkup(<Root data={data} />)}\n`,
     root = path.join(__dirname, '..', '..', '..'),
     outputDest = path.join(root, 'docs', 'index.html');
 

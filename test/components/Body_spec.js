@@ -5,6 +5,8 @@ import TestUtils from 'react-addons-test-utils';
 import * as ShallowTestUtils from 'react-shallow-testutils';
 import {expect} from 'chai';
 
+import * as mockData from '../fixtures/mockAboutData';
+
 import Body from '../../src/javascript/components/Body';
 import Tagline from '../../src/javascript/components/Tagline';
 import Resume from '../../src/javascript/components/Resume';
@@ -16,7 +18,7 @@ describe('The body component', function () {
     let bodyComponent;
 
     before(() => {
-        shallowRenderer.render(<Body />);
+        shallowRenderer.render(<Body data={mockData} />);
         bodyComponent = shallowRenderer.getRenderOutput();
     });
 
