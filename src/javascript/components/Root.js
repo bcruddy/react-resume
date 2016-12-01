@@ -7,7 +7,9 @@ export default class Root extends Component {
         return (
             <html>
                 <Head />
-                <Body />
+                {this.props.data ? (
+                    <Body data={this.props.data} />
+                ) : <body><div className='text-center alert-error'>An error occurred.</div></body>}
             </html>
         );
     }

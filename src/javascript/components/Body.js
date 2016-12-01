@@ -3,17 +3,17 @@ import Tagline from './Tagline';
 import Resume from './Resume';
 import Footer from './Footer';
 
-import aboutData from '../../../aboutData';
-
 export default class Body extends Component {
     render () {
+        const {fullName, title, location, resume, footerLinks} = this.props.data;
+
         return (
             <body>
                 <Tagline
-                    fullName={aboutData.fullName}
-                    lead={`${aboutData.title} - ${aboutData.location}`} />
-                <Resume data={aboutData.resume} />
-                <Footer links={aboutData.footerLinks} />
+                    fullName={fullName}
+                    lead={`${title} - ${location}`} />
+                <Resume data={resume} />
+                <Footer links={footerLinks} />
             </body>
         );
     }

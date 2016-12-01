@@ -4,6 +4,8 @@ import TestUtils from 'react-addons-test-utils';
 import * as ShallowTestUtils from 'react-shallow-testutils';
 import {expect} from 'chai';
 
+import * as mockData from '../fixtures/mockAboutData';
+
 import Root from '../../src/javascript/components/Root';
 import Head from '../../src/javascript/components/Head';
 import Body from '../../src/javascript/components/Body';
@@ -14,7 +16,7 @@ describe('The root component', function () {
     let rootComponent;
 
     before(() => {
-        shallowRenderer.render(<Root />);
+        shallowRenderer.render(<Root data={mockData} />);
         rootComponent = shallowRenderer.getRenderOutput();
     });
 
