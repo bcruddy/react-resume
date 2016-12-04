@@ -26,6 +26,7 @@
     "react-shallow-testutils": "^2.0.0"
   },
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "lodash": "^4.17.0",
     "path": "^0.12.7",
