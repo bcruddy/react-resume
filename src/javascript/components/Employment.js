@@ -10,7 +10,8 @@ export default class Employment extends Component {
             return null;
         }
 
-        let jobsList = jobs.map(jobInfo => <Job {...jobInfo} />);
+        let jobsList = jobs.map((jobInfo, index) =>
+            <Job {...jobInfo} key={'idx' + index} />);
 
         return (
             <div className='row margin20'>
