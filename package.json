@@ -9,7 +9,7 @@
     "debug": "node debug ./dist/app.js",
     "test": "npm run build && mocha --compilers js:babel-core/register ./test/**/*_spec.js",
     "build": "gulp build",
-    "generate-static": "npm run build && node ./dist/lib/generate-static-html.js"
+    "generate": "node ./dist/lib/generate-static-html.js"
   },
   "author": "@bcruddy",
   "license": "ISC",
