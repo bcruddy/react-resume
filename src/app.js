@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import busboy from 'connect-busboy';
+import {MongoClient, ObjectId} from 'mongodb';
 
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
@@ -18,7 +19,25 @@ app
     .get('/', (req, res) => {
         res.send(`<!DOCTYPE html>${ReactDOMServer.renderToStaticMarkup(<Root data={data} />)}\n`);
     })
-    .post('/generate', (req, res) => {
+    .get('/cv/:id', (req, res) => {
+        MongoClient.connect(process.env.STATIC_CV_DB, (err, db) => {
+            if (err) {
+                return res.redirect('/?error=render')
+            }
+
+            db.collection('resume-data')
+                .find({_id: ObjectId(req.params.id)}).toArray((err, docs) => {
+                    if (err || !docs || !docs.length) {
+                        return res.redirect('/?error=find')
+                    }
+
+                    res.send(`<!DOCTYPE html>${ReactDOMServer.renderToStaticMarkup(<Root data={docs[0]} />)}\n`);
+                });
+
+            db.close();
+        });
+    })
+    .post('/cv', (req, res) => {
         req.pipe(req.busboy);
         req.busboy.on('file', (fieldName, fileStream, filename, encode, mimetype) => {
 
@@ -29,7 +48,19 @@ app
                 .on('data', (chunk) => { body += chunk })
                 .on('end', () => {
                     json = JSON.parse(body);
-                    console.log(json);
+
+                    MongoClient.connect(process.env.STATIC_CV_DB, (err, db) => {
+                        if (err) {
+                            return res.status(500).json({ error: 500, message: 'An error occurred uploading your file.' });
+                        }
+
+                        db.collection('resume-data')
+                            .insert(json, (err, result) => {
+                                res.redirect(`/cv/${result.insertedIds[0]}`);
+                            });
+
+                        db.close();
+                    });
                 })
                 .on('error', err => {
                     console.log(err);
